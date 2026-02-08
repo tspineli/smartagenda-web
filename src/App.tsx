@@ -77,7 +77,7 @@ export default function App() {
         <div className="mx-auto flex min-h-18 w-[min(1160px,92vw)] items-center justify-between gap-2">
           <a href="#inicio" className="inline-flex items-center gap-2" aria-label="SmartAgenda início">
             <img src={logo} alt="Logo SmartAgenda" className="size-8 rounded-xl" />
-            <span className="font-display text-[0.8rem] leading-[0.9] font-bold">
+            <span className="font-display text-[0.9rem] leading-[0.9] font-bold">
               <span className="block">Smart</span>
               <span className="block">Agenda</span>
             </span>
@@ -121,11 +121,11 @@ export default function App() {
           {menuOpen && (
             <motion.nav
               id="mobile-nav"
-              initial={{ opacity: 0, y: -24, height: 0 }}
-              animate={{ opacity: 1, y: 0, height: 'auto' }}
-              exit={{ opacity: 0, y: -16, height: 0 }}
+              initial={{ opacity: 0, y: -16 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -12 }}
               transition={{ duration: 0.24, ease: 'easeOut' }}
-              className="w-full overflow-hidden border-t border-sa-line bg-white shadow-[0_18px_25px_rgba(17,32,26,0.08)] md:hidden"
+              className="absolute top-full right-0 left-0 z-40 w-full border-t border-sa-line bg-white shadow-[0_18px_25px_rgba(17,32,26,0.08)] md:hidden"
             >
               <div className="mx-auto grid w-[min(1160px,92vw)] py-3">
                 <a className="block py-3 text-base font-semibold" href="#como-funciona" onClick={() => setMenuOpen(false)}>
