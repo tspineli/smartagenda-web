@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import useEmblaCarousel from 'embla-carousel-react'
 import { CalendarClock, Menu, MessageCircleMore, ShieldCheck, Sparkles, X } from 'lucide-react'
 import clsx from 'clsx'
-import { motion } from 'framer-motion'
+import { AnimatePresence, motion } from 'framer-motion'
 import logo from './assets/logo.svg'
 import heroBanner from './assets/images/hero-banner.svg'
 import featurePanel from './assets/images/features-panel.svg'
@@ -74,17 +74,19 @@ export default function App() {
       <div aria-hidden className="pointer-events-none fixed -right-8 top-96 -z-10 h-40 w-40 rounded-[5rem] border-2 border-[#25d3662a]" />
 
       <header className="sticky top-0 z-30 border-b border-[#ddf0e3] bg-[#f5fff8de] backdrop-blur-sm">
-        <div className="mx-auto flex min-h-18 w-[min(1160px,92vw)] items-center justify-between gap-4">
-          <a href="#inicio" className="inline-flex items-center gap-3" aria-label="SmartAgenda início">
+        <div className="mx-auto flex min-h-18 w-[min(1160px,92vw)] items-center justify-between gap-2">
+          <a href="#inicio" className="inline-flex items-center gap-2" aria-label="SmartAgenda início">
             <img src={logo} alt="Logo SmartAgenda" className="size-8 rounded-xl" />
-            <span className="font-display text-base font-bold">SmartAgenda</span>
+            <span className="font-display text-[0.8rem] leading-[0.9] font-bold">
+              <span className="block">Smart</span>
+              <span className="block">Agenda</span>
+            </span>
           </a>
 
           <nav
             id="main-nav"
             className={clsx(
-              'absolute top-[4.6rem] left-[4vw] right-[4vw] rounded-2xl border border-sa-line bg-white p-4 shadow-xl md:static md:flex md:items-center md:gap-5 md:border-0 md:bg-transparent md:p-0 md:shadow-none',
-              menuOpen ? 'block' : 'hidden md:flex',
+              'hidden md:static md:flex md:items-center md:gap-5 md:border-0 md:bg-transparent md:p-0 md:shadow-none',
             )}
           >
             <a className="block py-2 text-sm font-semibold" href="#como-funciona" onClick={() => setMenuOpen(false)}>
@@ -99,14 +101,14 @@ export default function App() {
           </nav>
 
           <div className="flex items-center gap-2">
-            <a className="btn btn-primary px-4 py-2 text-xs" href="#contato">
+            <a className="btn btn-primary px-3.5 py-2 text-[0.72rem] tracking-wide" href="#contato">
               TESTE GRÁTIS
             </a>
 
             <button
               className="inline-flex items-center justify-center rounded-xl border border-sa-line bg-white p-2 text-sa-ink md:hidden"
               aria-expanded={menuOpen}
-              aria-controls="main-nav"
+              aria-controls="mobile-nav"
               aria-label="Abrir menu"
               onClick={() => setMenuOpen((v) => !v)}
             >
@@ -114,6 +116,38 @@ export default function App() {
             </button>
           </div>
         </div>
+
+        <AnimatePresence>
+          {menuOpen && (
+            <motion.nav
+              id="mobile-nav"
+              initial={{ opacity: 0, y: -24, height: 0 }}
+              animate={{ opacity: 1, y: 0, height: 'auto' }}
+              exit={{ opacity: 0, y: -16, height: 0 }}
+              transition={{ duration: 0.24, ease: 'easeOut' }}
+              className="w-full overflow-hidden border-t border-sa-line bg-white shadow-[0_18px_25px_rgba(17,32,26,0.08)] md:hidden"
+            >
+              <div className="mx-auto grid w-[min(1160px,92vw)] py-3">
+                <a className="block py-3 text-base font-semibold" href="#como-funciona" onClick={() => setMenuOpen(false)}>
+                  Como funciona
+                </a>
+                <a className="block py-3 text-base font-semibold" href="#recursos" onClick={() => setMenuOpen(false)}>
+                  Recursos
+                </a>
+                <a className="block py-3 text-base font-semibold" href="#segmentos" onClick={() => setMenuOpen(false)}>
+                  Segmentos
+                </a>
+                <a
+                  className="mt-2 inline-flex w-fit rounded-full border border-sa-ink px-6 py-2 text-sm font-black tracking-wide"
+                  href="#contato"
+                  onClick={() => setMenuOpen(false)}
+                >
+                  JÁ SOU CLIENTE
+                </a>
+              </div>
+            </motion.nav>
+          )}
+        </AnimatePresence>
       </header>
 
       <main id="inicio">
