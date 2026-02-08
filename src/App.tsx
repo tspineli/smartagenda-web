@@ -46,31 +46,28 @@ const banners = [
   { src: bannerOperations, alt: 'Banner sobre organização operacional do salão' },
 ]
 
-const geometricSamples = [
-  { src: '/images/sample-barber.jpg', alt: 'Profissional de barbearia em atendimento' },
-  { src: '/images/sample-beauty.jpg', alt: 'Profissional de beleza em atendimento' },
-  { src: '/images/sample-salon.jpg', alt: 'Profissional em salão atendendo cliente' },
-]
+const geometricSample = {
+  src: '/images/sample-beauty.jpg',
+  alt: 'Profissional de beleza em atendimento',
+}
 
 function LogoGeometryPhoto({
   src,
   alt,
-  delay,
 }: {
   src: string
   alt: string
-  delay: number
 }) {
   const clipId = useId().replace(/:/g, '')
 
   return (
     <motion.svg
       viewBox="230 190 560 690"
-      className="h-[220px] w-[148px] shrink-0 sm:h-[250px] sm:w-[168px]"
+      className="h-[360px] w-[258px] sm:h-[430px] sm:w-[308px]"
       initial={{ opacity: 0, y: 18 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.5 }}
-      transition={{ duration: 0.35, delay }}
+      transition={{ duration: 0.35 }}
       role="img"
       aria-label={alt}
     >
@@ -83,7 +80,6 @@ function LogoGeometryPhoto({
       </defs>
       <image href={src} x="230" y="190" width="560" height="690" preserveAspectRatio="xMidYMid slice" clipPath={`url(#${clipId})`} />
       <path transform="matrix(1,0,0,-1,0,1024)" d="M511.6536 802.065C587.3637 802.065 653.4958 800.8411 686.4439 786.7526 716.0423 775.9175 742.558 758.8574 764.4198 737.0765 778.1185 723.4284 790.024 707.8761 799.7119 690.7471L223.7572 690.7519C233.382 707.8836 245.2353 723.4347 258.8873 737.0765 280.7059 758.8786 307.2238 775.9521 336.8632 786.7526 369.8113 800.8411 435.9434 802.065 511.6536 802.065Z" fill="#11201A" fillOpacity="0.18" />
-      <path transform="matrix(1,0,0,1,403.8071,670)" strokeWidth="15" strokeLinecap="round" fill="none" stroke="#11201A" d="M216 .3509521C149.0048 47.3476 77.00475 47.23062 0 0" />
       <path transform="matrix(1,0,0,-1,0,1024)" d="M511.6535 802.065C587.3637 802.065 653.4958 800.8411 686.4439 786.7526 745.7698 765.1597 792.503 718.4265 814.0959 659.1006 826.7242 631.6621 829.4083 564.9903 829.4083 511 829.4083 457.0098 826.7242 390.338 814.0959 362.8995 792.503 303.5736 745.7698 256.8404 686.4439 235.2475 653.4958 221.159 587.3637 219.9351 511.6535 219.9351 435.9434 219.9351 369.8113 221.159 336.8632 235.2475 277.5373 256.8404 230.8041 303.5736 209.2112 362.8995 196.5829 390.338 193.8988 457.0098 193.8988 511 193.8988 564.9903 196.5829 631.6621 209.2112 659.1006 230.8041 718.4265 277.5373 765.1597 336.8632 786.7526 369.8113 800.8411 435.9434 802.065 511.6535 802.065Z" fill="none" stroke="#FFFFFF" strokeOpacity="0.78" strokeWidth="8" />
     </motion.svg>
   )
@@ -231,10 +227,8 @@ export default function App() {
               transition={{ duration: 0.45, delay: 0.1 }}
             >
               <p className="text-xs font-black tracking-wide text-sa-brand-dark">RECORTE GEOMÉTRICO DA MARCA</p>
-              <div className="mt-3 flex items-end justify-center gap-2 overflow-x-auto pb-1">
-                {geometricSamples.map((item, index) => (
-                  <LogoGeometryPhoto key={item.src} src={item.src} alt={item.alt} delay={index * 0.08} />
-                ))}
+              <div className="mt-3 flex justify-center">
+                <LogoGeometryPhoto src={geometricSample.src} alt={geometricSample.alt} />
               </div>
               <div className="mt-4 flex justify-center">
                 <a href="#contato" className="btn btn-primary px-5 py-2 text-xs">TESTE GRÁTIS</a>
