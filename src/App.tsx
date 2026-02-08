@@ -63,7 +63,7 @@ function LogoGeometryPhoto({
   return (
     <motion.svg
       viewBox="230 190 560 690"
-      className="h-[400px] w-[286px] sm:h-[480px] sm:w-[344px]"
+      className="h-[450px] w-[322px] sm:h-[560px] sm:w-[400px]"
       initial={{ opacity: 0, y: 18 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.5 }}
@@ -205,11 +205,6 @@ export default function App() {
                 Sem app para o cliente final e sem equipe presa no celular.
               </p>
 
-              <div className="mt-6 flex flex-wrap gap-3">
-                <a href="#contato" className="btn btn-primary">TESTE GRÁTIS</a>
-                <a href="#demo" className="btn btn-secondary">Ver demonstração</a>
-              </div>
-
               <ul className="mt-5 flex flex-wrap gap-2 text-sm font-semibold text-sa-ink">
                 {['Resposta imediata', 'Sem conflito de agenda', 'Setup em minutos'].map((item) => (
                   <li key={item} className="rounded-full border border-[#cde8d8] bg-[#ecfff1] px-3 py-1.5">
@@ -226,7 +221,6 @@ export default function App() {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.45, delay: 0.1 }}
             >
-              <p className="text-xs font-black tracking-wide text-sa-brand-dark">RECORTE GEOMÉTRICO DA MARCA</p>
               <div className="mt-3 flex justify-center">
                 <LogoGeometryPhoto src={geometricSample.src} alt={geometricSample.alt} />
               </div>
@@ -238,6 +232,11 @@ export default function App() {
                 <span className="h-2 w-16 rounded-full bg-[#f06a00]" />
               </div>
             </motion.div>
+          </div>
+
+          <div className="mx-auto mt-5 flex w-[min(1160px,92vw)] flex-wrap gap-3 md:-mt-2">
+            <a href="#contato" className="btn btn-primary">TESTE GRÁTIS</a>
+            <a href="#demo" className="btn btn-secondary">Ver demonstração</a>
           </div>
         </section>
 
