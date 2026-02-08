@@ -189,7 +189,7 @@ export default function App() {
       </header>
 
       <main id="inicio">
-        <section className="section pt-10 md:pt-16">
+        <section className="section pt-6 md:pt-16">
           <div className="mx-auto grid w-[min(1160px,92vw)] items-center gap-8 md:grid-cols-[1.06fr_0.94fr] md:gap-10">
             <motion.div
               initial={{ opacity: 0, y: 24 }}
@@ -219,7 +219,7 @@ export default function App() {
             </motion.div>
           </div>
 
-          <div className="mx-auto mt-1 flex w-[min(1160px,92vw)] flex-col gap-2 md:-mt-1 md:max-w-[320px]">
+          <div className="mx-auto mt-1 grid w-[min(1160px,92vw)] grid-cols-2 gap-2 md:-mt-1 md:max-w-[520px]">
             <a href="#contato" className="btn btn-primary w-full py-2.5">TESTE GRÁTIS</a>
             <a href="#demo" className="btn btn-secondary w-full py-2.5">Ver demonstração</a>
           </div>

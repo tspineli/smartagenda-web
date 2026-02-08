@@ -56,6 +56,6 @@
   }
 
   .section {
-    @apply py-14 md:py-20;
+    @apply py-8 md:py-20;
   }
 }
