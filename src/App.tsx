@@ -47,7 +47,7 @@ const banners = [
 ]
 
 const geometricSample = {
-  src: '/images/sample-beauty.jpg',
+  src: '/images/cabelereiro.png',
   alt: 'Profissional de beleza em atendimento',
 }
 
