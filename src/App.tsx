@@ -204,14 +204,6 @@ export default function App() {
                 O SmartAgenda conversa com seus clientes no WhatsApp, entende o pedido e confirma horários automaticamente.
                 Sem app para o cliente final e sem equipe presa no celular.
               </p>
-
-              <ul className="mt-5 flex flex-wrap gap-2 text-sm font-semibold text-sa-ink">
-                {['Resposta imediata', 'Sem conflito de agenda', 'Setup em minutos'].map((item) => (
-                  <li key={item} className="rounded-full border border-[#cde8d8] bg-[#ecfff1] px-3 py-1.5">
-                    {item}
-                  </li>
-                ))}
-              </ul>
             </motion.div>
 
             <motion.div
@@ -224,19 +216,12 @@ export default function App() {
               <div className="mt-3 flex justify-center">
                 <LogoGeometryPhoto src={geometricSample.src} alt={geometricSample.alt} />
               </div>
-              <div className="mt-4 flex justify-center">
-                <a href="#contato" className="btn btn-primary px-5 py-2 text-xs">TESTE GRÁTIS</a>
-              </div>
-              <div className="mt-3 flex items-center justify-center gap-2">
-                <span className="size-2 rounded-full bg-[#c5cfc9]" />
-                <span className="h-2 w-16 rounded-full bg-[#f06a00]" />
-              </div>
             </motion.div>
           </div>
 
-          <div className="mx-auto mt-5 flex w-[min(1160px,92vw)] flex-wrap gap-3 md:-mt-2">
-            <a href="#contato" className="btn btn-primary">TESTE GRÁTIS</a>
-            <a href="#demo" className="btn btn-secondary">Ver demonstração</a>
+          <div className="mx-auto mt-5 flex w-[min(1160px,92vw)] flex-col gap-3 md:-mt-2 md:max-w-[320px]">
+            <a href="#contato" className="btn btn-primary w-full">TESTE GRÁTIS</a>
+            <a href="#demo" className="btn btn-secondary w-full">Ver demonstração</a>
           </div>
         </section>
 
