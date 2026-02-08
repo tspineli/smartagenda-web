@@ -63,7 +63,7 @@ function LogoGeometryPhoto({
   return (
     <motion.svg
       viewBox="230 190 560 690"
-      className="h-[450px] w-[322px] sm:h-[560px] sm:w-[400px]"
+      className="h-[300px] w-[214px] sm:h-[430px] sm:w-[308px]"
       initial={{ opacity: 0, y: 18 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.5 }}
@@ -208,20 +208,20 @@ export default function App() {
 
             <motion.div
               id="demo"
-              className="rounded-3xl bg-transparent p-2 sm:p-3"
+              className="rounded-3xl bg-transparent p-0 sm:p-2"
               initial={{ opacity: 0, scale: 0.97 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.45, delay: 0.1 }}
             >
-              <div className="mt-1 flex justify-center">
+              <div className="mt-0 flex justify-center">
                 <LogoGeometryPhoto src={geometricSample.src} alt={geometricSample.alt} />
               </div>
             </motion.div>
           </div>
 
-          <div className="mx-auto mt-2 flex w-[min(1160px,92vw)] flex-col gap-3 md:-mt-1 md:max-w-[320px]">
-            <a href="#contato" className="btn btn-primary w-full">TESTE GRÁTIS</a>
-            <a href="#demo" className="btn btn-secondary w-full">Ver demonstração</a>
+          <div className="mx-auto mt-1 flex w-[min(1160px,92vw)] flex-col gap-2 md:-mt-1 md:max-w-[320px]">
+            <a href="#contato" className="btn btn-primary w-full py-2.5">TESTE GRÁTIS</a>
+            <a href="#demo" className="btn btn-secondary w-full py-2.5">Ver demonstração</a>
           </div>
         </section>
 
