@@ -63,7 +63,7 @@ function LogoGeometryPhoto({
   return (
     <motion.svg
       viewBox="230 190 560 690"
-      className="h-[360px] w-[258px] sm:h-[430px] sm:w-[308px]"
+      className="h-[400px] w-[286px] sm:h-[480px] sm:w-[344px]"
       initial={{ opacity: 0, y: 18 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.5 }}
@@ -221,7 +221,7 @@ export default function App() {
 
             <motion.div
               id="demo"
-              className="rounded-3xl border border-sa-line bg-white p-4 shadow-[0_20px_40px_rgba(17,32,26,0.08)] sm:p-5"
+              className="rounded-3xl bg-transparent p-2 sm:p-3"
               initial={{ opacity: 0, scale: 0.97 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.45, delay: 0.1 }}
