@@ -80,16 +80,6 @@ export default function App() {
             <span className="font-display text-base font-bold">SmartAgenda</span>
           </a>
 
-          <button
-            className="inline-flex items-center justify-center rounded-xl border border-sa-line bg-white p-2 text-sa-ink md:hidden"
-            aria-expanded={menuOpen}
-            aria-controls="main-nav"
-            aria-label="Abrir menu"
-            onClick={() => setMenuOpen((v) => !v)}
-          >
-            {menuOpen ? <X className="size-5" /> : <Menu className="size-5" />}
-          </button>
-
           <nav
             id="main-nav"
             className={clsx(
@@ -106,10 +96,23 @@ export default function App() {
             <a className="block py-2 text-sm font-semibold" href="#segmentos" onClick={() => setMenuOpen(false)}>
               Segmentos
             </a>
-            <a className="btn btn-primary mt-2 md:mt-0" href="#contato" onClick={() => setMenuOpen(false)}>
-              Teste grátis
-            </a>
           </nav>
+
+          <div className="flex items-center gap-2">
+            <a className="btn btn-primary px-4 py-2 text-xs" href="#contato">
+              TESTE GRÁTIS
+            </a>
+
+            <button
+              className="inline-flex items-center justify-center rounded-xl border border-sa-line bg-white p-2 text-sa-ink md:hidden"
+              aria-expanded={menuOpen}
+              aria-controls="main-nav"
+              aria-label="Abrir menu"
+              onClick={() => setMenuOpen((v) => !v)}
+            >
+              {menuOpen ? <X className="size-5" /> : <Menu className="size-5" />}
+            </button>
+          </div>
         </div>
       </header>
 
@@ -131,7 +134,7 @@ export default function App() {
               </p>
 
               <div className="mt-6 flex flex-wrap gap-3">
-                <a href="#contato" className="btn btn-primary">Quero automatizar agora</a>
+                <a href="#contato" className="btn btn-primary">TESTE GRÁTIS</a>
                 <a href="#demo" className="btn btn-secondary">Ver demonstração</a>
               </div>
 
