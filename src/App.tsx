@@ -225,21 +225,6 @@ export default function App() {
           </div>
         </section>
 
-        <section className="section py-6 md:py-8" id="segmentos">
-          <div className="mx-auto w-[min(1160px,92vw)]">
-            <p className="max-w-[58ch] text-sa-muted">
-              Ideal para negócios que vendem tempo e precisam de agenda organizada sem complicação.
-            </p>
-            <div className="mt-4 flex flex-wrap gap-2.5 text-sm font-semibold">
-              {['Barbearias', 'Salões de beleza', 'Estética', 'Autônomos'].map((segment) => (
-                <span key={segment} className="rounded-full border border-sa-line bg-white px-3 py-1.5">
-                  {segment}
-                </span>
-              ))}
-            </div>
-          </div>
-        </section>
-
         <section className="section" id="como-funciona">
           <div className="mx-auto w-[min(1160px,92vw)]">
             <div className="max-w-[54ch] space-y-3">
