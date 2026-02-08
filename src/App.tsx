@@ -1,10 +1,9 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useId, useState } from 'react'
 import useEmblaCarousel from 'embla-carousel-react'
 import { CalendarClock, Menu, MessageCircleMore, ShieldCheck, Sparkles, X } from 'lucide-react'
 import clsx from 'clsx'
 import { AnimatePresence, motion } from 'framer-motion'
 import logo from './assets/logo.svg'
-import heroBanner from './assets/images/hero-banner.svg'
 import featurePanel from './assets/images/features-panel.svg'
 import bannerConversion from './assets/images/banner-conversion.svg'
 import bannerWhatsapp from './assets/images/banner-whatsapp.svg'
@@ -46,6 +45,50 @@ const banners = [
   { src: bannerWhatsapp, alt: 'Banner sobre agendamento via WhatsApp' },
   { src: bannerOperations, alt: 'Banner sobre organização operacional do salão' },
 ]
+
+const geometricSamples = [
+  { src: '/images/sample-barber.jpg', alt: 'Profissional de barbearia em atendimento', shape: 'capsule' as const },
+  { src: '/images/sample-beauty.jpg', alt: 'Profissional de beleza em atendimento', shape: 'capsule' as const },
+  { src: '/images/sample-salon.jpg', alt: 'Profissional em salão atendendo cliente', shape: 'capsuleWide' as const },
+]
+
+function LogoGeometryPhoto({
+  src,
+  alt,
+  shape,
+  delay,
+}: {
+  src: string
+  alt: string
+  shape: 'capsule' | 'capsuleWide'
+  delay: number
+}) {
+  const clipId = useId().replace(/:/g, '')
+  const path =
+    shape === 'capsule'
+      ? 'M110 18C149 18 180 49 180 88V292C180 331 149 362 110 362C71 362 40 331 40 292V88C40 49 71 18 110 18Z'
+      : 'M82 14H138C182 14 212 46 212 90V290C212 334 182 366 138 366H82C38 366 8 334 8 290V90C8 46 38 14 82 14Z'
+
+  return (
+    <motion.svg
+      viewBox="0 0 220 380"
+      className="h-[220px] w-[126px] shrink-0 sm:h-[250px] sm:w-[146px]"
+      initial={{ opacity: 0, y: 18 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.5 }}
+      transition={{ duration: 0.35, delay }}
+      role="img"
+      aria-label={alt}
+    >
+      <defs>
+        <clipPath id={clipId}>
+          <path d={path} />
+        </clipPath>
+      </defs>
+      <image href={src} width="220" height="380" preserveAspectRatio="xMidYMid slice" clipPath={`url(#${clipId})`} />
+    </motion.svg>
+  )
+}
 
 export default function App() {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -183,15 +226,23 @@ export default function App() {
 
             <motion.div
               id="demo"
-              className="relative overflow-hidden rounded-3xl border border-sa-line bg-white shadow-[0_20px_40px_rgba(17,32,26,0.08)]"
+              className="rounded-3xl border border-sa-line bg-white p-4 shadow-[0_20px_40px_rgba(17,32,26,0.08)] sm:p-5"
               initial={{ opacity: 0, scale: 0.97 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.45, delay: 0.1 }}
             >
-              <img src={heroBanner} alt="Interface do SmartAgenda em uma conversa de WhatsApp" />
-              <div className="absolute right-3 bottom-3 left-3 rounded-xl border border-sa-line bg-white/95 p-3">
-                <p className="text-xs font-black tracking-wide text-sa-brand-dark">HOJE ÀS 14:00</p>
-                <p className="text-sm font-semibold">Corte + barba com João confirmado ✅</p>
+              <p className="text-xs font-black tracking-wide text-sa-brand-dark">RECORTE GEOMÉTRICO DA MARCA</p>
+              <div className="mt-3 flex items-end justify-center gap-2 overflow-x-auto pb-1">
+                {geometricSamples.map((item, index) => (
+                  <LogoGeometryPhoto key={item.src} src={item.src} alt={item.alt} shape={item.shape} delay={index * 0.08} />
+                ))}
+              </div>
+              <div className="mt-4 flex justify-center">
+                <a href="#contato" className="btn btn-primary px-5 py-2 text-xs">TESTE GRÁTIS</a>
+              </div>
+              <div className="mt-3 flex items-center justify-center gap-2">
+                <span className="size-2 rounded-full bg-[#c5cfc9]" />
+                <span className="h-2 w-16 rounded-full bg-[#f06a00]" />
               </div>
             </motion.div>
           </div>
