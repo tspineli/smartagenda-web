@@ -213,13 +213,13 @@ export default function App() {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.45, delay: 0.1 }}
             >
-              <div className="mt-3 flex justify-center">
+              <div className="mt-1 flex justify-center">
                 <LogoGeometryPhoto src={geometricSample.src} alt={geometricSample.alt} />
               </div>
             </motion.div>
           </div>
 
-          <div className="mx-auto mt-5 flex w-[min(1160px,92vw)] flex-col gap-3 md:-mt-2 md:max-w-[320px]">
+          <div className="mx-auto mt-2 flex w-[min(1160px,92vw)] flex-col gap-3 md:-mt-1 md:max-w-[320px]">
             <a href="#contato" className="btn btn-primary w-full">TESTE GRÁTIS</a>
             <a href="#demo" className="btn btn-secondary w-full">Ver demonstração</a>
           </div>
