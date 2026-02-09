@@ -181,7 +181,7 @@ export default function App() {
             >
               <div className="mt-0 flex justify-center">
                 <motion.div
-                  className="relative w-full max-w-[370px] overflow-hidden rounded-3xl sm:max-w-[460px]"
+                  className="hero-image relative w-full max-w-[370px] overflow-hidden rounded-3xl sm:max-w-[460px]"
                   initial={{ opacity: 0, y: 18 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, amount: 0.5 }}
@@ -198,9 +198,9 @@ export default function App() {
               </div>
             </motion.div>
           </div>
-          <div className="mx-auto mt-3 grid w-[min(1160px,92vw)] grid-cols-2 gap-2 md:max-w-[520px]">
+          <div className="mx-auto mt-1 grid w-[min(1160px,92vw)] grid-cols-2 gap-2 md:max-w-[520px]">
             <a href="#contato" className="btn btn-primary w-full py-2.5">TESTE GRÁTIS</a>
-            <a href="#como-funciona" className="btn btn-secondary w-full py-2.5">Ver demonstração</a>
+            <a href="#como-funciona" className="btn btn-secondary w-full py-2.5">Ver na prática</a>
           </div>
         </section>
 
