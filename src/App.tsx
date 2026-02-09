@@ -47,7 +47,7 @@ const banners = [
 ]
 
 const geometricSample = {
-  src: '/images/smartagenda_hero.png',
+  src: '/images/hero_square.png',
   alt: 'Barbeiro segurando celular com conversa do SmartAgenda no WhatsApp',
 }
 
@@ -187,22 +187,20 @@ export default function App() {
                   viewport={{ once: true, amount: 0.5 }}
                   transition={{ duration: 0.35 }}
                 >
-                  <div className="aspect-[2/3] w-full">
+                  <div className="aspect-square w-full">
                     <img
                       src={geometricSample.src}
                       alt={geometricSample.alt}
-                      className="h-full w-full scale-y-[1.43] object-cover object-center"
+                      className="h-full w-full object-cover object-center"
                     />
-                  </div>
-
-                  <div className="pointer-events-none absolute inset-x-0 bottom-0 h-28 bg-linear-to-t from-black/35 via-black/10 to-transparent" />
-                  <div className="absolute right-2 bottom-2 left-2 grid grid-cols-2 gap-2">
-                    <a href="#contato" className="btn btn-primary w-full py-2.5">TESTE GRÁTIS</a>
-                    <a href="#como-funciona" className="btn btn-secondary w-full py-2.5">Ver demonstração</a>
                   </div>
                 </motion.div>
               </div>
             </motion.div>
+          </div>
+          <div className="mx-auto mt-3 grid w-[min(1160px,92vw)] grid-cols-2 gap-2 md:max-w-[520px]">
+            <a href="#contato" className="btn btn-primary w-full py-2.5">TESTE GRÁTIS</a>
+            <a href="#como-funciona" className="btn btn-secondary w-full py-2.5">Ver demonstração</a>
           </div>
         </section>
 
