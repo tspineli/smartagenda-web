@@ -58,4 +58,15 @@
   .section {
     @apply py-8 md:py-20;
   }
+
+  .hero-image::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.06);
+    pointer-events: none;
+    /* Preserva mais luz na regiao do celular+mao e escurece o restante */
+    -webkit-mask-image: radial-gradient(ellipse 42% 52% at 34% 63%, transparent 0%, transparent 60%, black 83%, black 100%);
+    mask-image: radial-gradient(ellipse 42% 52% at 34% 63%, transparent 0%, transparent 60%, black 83%, black 100%);
+  }
 }
