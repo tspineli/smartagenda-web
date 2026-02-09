@@ -181,7 +181,7 @@ export default function App() {
             >
               <div className="mt-0 flex justify-center">
                 <motion.div
-                  className="relative w-full max-w-[260px] overflow-hidden rounded-3xl sm:max-w-[320px]"
+                  className="relative w-full max-w-[370px] overflow-hidden rounded-3xl sm:max-w-[460px]"
                   initial={{ opacity: 0, y: 18 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, amount: 0.5 }}
@@ -191,7 +191,7 @@ export default function App() {
                     <img
                       src={geometricSample.src}
                       alt={geometricSample.alt}
-                      className="h-full w-full scale-y-110 object-cover object-center"
+                      className="h-full w-full scale-y-[1.43] object-cover object-center"
                     />
                   </div>
 
