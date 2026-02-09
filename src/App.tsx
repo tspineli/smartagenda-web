@@ -1,4 +1,4 @@
-import { useEffect, useId, useState } from 'react'
+import { useEffect, useState } from 'react'
 import useEmblaCarousel from 'embla-carousel-react'
 import { CalendarClock, Menu, MessageCircleMore, ShieldCheck, Sparkles, X } from 'lucide-react'
 import clsx from 'clsx'
@@ -49,37 +49,6 @@ const banners = [
 const geometricSample = {
   src: '/images/cabelereiro.png',
   alt: 'Profissional de beleza em atendimento',
-}
-
-function LogoGeometryPhoto({
-  src,
-  alt,
-}: {
-  src: string
-  alt: string
-}) {
-  const clipId = useId().replace(/:/g, '')
-
-  return (
-    <motion.svg
-      viewBox="0 0 1024 1024"
-      className="h-[300px] w-[214px] sm:h-[430px] sm:w-[308px]"
-      initial={{ opacity: 0, y: 18 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.5 }}
-      transition={{ duration: 0.35 }}
-      role="img"
-      aria-label={alt}
-    >
-      <defs>
-        <clipPath id={clipId} clipPathUnits="userSpaceOnUse">
-          <path transform="matrix(1,0,0,-1,0,1024)" d="M496.7638 1024.35H526.5434C672.42 1024.35 759.946 1024.35 818.2966 999.9894 902.4141 969.3731 968.6767 903.1105 999.293 818.993 1023.654 760.6424 1023.654 673.1164 1023.654 527.2398V494.7602C1023.654 348.8836 1023.654 261.3576 999.293 203.007 968.6767 118.8895 902.4141 52.6269 818.2966 22.01063 759.946-2.349976 672.42-2.349976 526.5434-2.349976H496.7638C350.8872-2.349976 263.3612-2.349976 205.0105 22.01063 120.8931 52.6269 54.63047 118.8895 24.01421 203.007-.3464049 261.3576-.3464049 348.8836-.3464049 494.7602V527.2398C-.3464049 673.1164-.3464049 760.6424 24.01421 818.993 54.63047 903.1105 120.8931 969.3731 205.0105 999.9894 263.3612 1024.35 350.8872 1024.35 496.7638 1024.35Z" />
-        </clipPath>
-      </defs>
-      <image href={src} x="0" y="0" width="1024" height="1024" preserveAspectRatio="xMidYMid slice" clipPath={`url(#${clipId})`} />
-      <path transform="matrix(1,0,0,-1,0,1024)" d="M496.7638 1024.35H526.5434C672.42 1024.35 759.946 1024.35 818.2966 999.9894 902.4141 969.3731 968.6767 903.1105 999.293 818.993 1023.654 760.6424 1023.654 673.1164 1023.654 527.2398V494.7602C1023.654 348.8836 1023.654 261.3576 999.293 203.007 968.6767 118.8895 902.4141 52.6269 818.2966 22.01063 759.946-2.349976 672.42-2.349976 526.5434-2.349976H496.7638C350.8872-2.349976 263.3612-2.349976 205.0105 22.01063 120.8931 52.6269 54.63047 118.8895 24.01421 203.007-.3464049 261.3576-.3464049 348.8836-.3464049 494.7602V527.2398C-.3464049 673.1164-.3464049 760.6424 24.01421 818.993 54.63047 903.1105 120.8931 969.3731 205.0105 999.9894 263.3612 1024.35 350.8872 1024.35 496.7638 1024.35Z" fill="none" stroke="#FFFFFF" strokeOpacity="0.78" strokeWidth="14" />
-    </motion.svg>
-  )
 }
 
 export default function App() {
@@ -205,13 +174,21 @@ export default function App() {
 
             <motion.div
               id="demo"
-              className="rounded-3xl bg-transparent p-0 sm:p-2"
+              className="bg-transparent p-0"
               initial={{ opacity: 0, scale: 0.97 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.45, delay: 0.1 }}
             >
               <div className="mt-0 flex justify-center">
-                <LogoGeometryPhoto src={geometricSample.src} alt={geometricSample.alt} />
+                <motion.img
+                  src={geometricSample.src}
+                  alt={geometricSample.alt}
+                  className="h-auto w-full max-w-[370px] object-cover sm:max-w-[460px]"
+                  initial={{ opacity: 0, y: 18 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.5 }}
+                  transition={{ duration: 0.35 }}
+                />
               </div>
             </motion.div>
           </div>
