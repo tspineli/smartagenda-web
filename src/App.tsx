@@ -47,8 +47,8 @@ const banners = [
 ]
 
 const geometricSample = {
-  src: '/images/cabelereiro.png',
-  alt: 'Profissional de beleza em atendimento',
+  src: '/images/smartagenda_hero.png',
+  alt: 'Barbeiro segurando celular com conversa do SmartAgenda no WhatsApp',
 }
 
 export default function App() {
