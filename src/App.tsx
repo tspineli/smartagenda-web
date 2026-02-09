@@ -181,7 +181,7 @@ export default function App() {
             >
               <div className="mt-0 flex justify-center">
                 <motion.div
-                  className="relative w-full max-w-[370px] overflow-hidden rounded-3xl sm:max-w-[460px]"
+                  className="relative w-full max-w-[260px] overflow-hidden rounded-3xl sm:max-w-[320px]"
                   initial={{ opacity: 0, y: 18 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, amount: 0.5 }}
